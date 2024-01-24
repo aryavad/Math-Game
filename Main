@@ -1,0 +1,216 @@
+import java.util.Scanner;
+import java.util.Random;
+import java.text.DecimalFormat;
+
+class Main {
+  public static void main(String[] args) {
+    Scanner reader = new Scanner (System.in);
+    Random rand = new Random();
+    DecimalFormat decform = new DecimalFormat ("0.00");
+
+
+    int answer;
+    int check = 1;
+    int x;
+    int y;
+    int ans;
+    int user_ans;
+    int points=0; 
+    
+  do{
+    int numproblems = 1;
+    System.out.println("Enter the number for the problem type desired.");
+    System.out.println("1. Addition");
+    System.out.println("2. Subtraction");
+    System.out.println("3. Multiplication");
+    System.out.println("4. Division");
+    System.out.println("Enter choice: "); 
+    int choice = reader.nextInt();
+    switch (choice){
+        
+      case 1 : while (numproblems < 10){
+        x = 1 + rand.nextInt(101);
+        y = 1 + rand.nextInt(101);
+        System.out.println ("Question "+ numproblems + ".) " + x + " + " + y);
+        user_ans = reader.nextInt(); 
+        ans = x + y;
+        if (user_ans == ans){
+          System.out.println("correct");
+          points = points + 10;
+        }
+        else {
+          System.out.println ("incorrect, try again");
+          System.out.println (x + " + " + y);
+          user_ans = reader.nextInt(); 
+          if (user_ans == ans){
+            System.out.println("correct");
+            points = points + 5;
+          }
+          else {
+            System.out.println ("incorrect, try again");
+            System.out.println (x + " + " + y);
+            user_ans = reader.nextInt(); 
+            if (user_ans == ans){
+              System.out.println ("correct");
+              points = points + 2;
+            }
+            else {
+              System.out.println ("Incorrect. The answer is: " + ans + "!");
+              System.out.println (" ");
+              points = points + 0;
+            }
+          }
+        }
+        numproblems++;
+      }
+        System.out.println("You got " + points + "!");
+        break;
+      
+      case 2 : while (numproblems < 10){
+        x = 1 + rand.nextInt(101);
+        y = 1 + rand.nextInt(101);
+        System.out.println ("Question "+ numproblems + ".) " + x + " - " + y);
+        user_ans = reader.nextInt(); 
+        ans = x - y;
+        if (user_ans == ans){
+          System.out.println("correct");
+          points = points + 10;
+        }
+        else {
+          System.out.println ("incorrect, try again");
+          System.out.println (x + " - " + y);
+          user_ans = reader.nextInt(); 
+          if (user_ans == ans){
+            System.out.println("correct");
+            points = points + 5;
+          }
+          else {
+            System.out.println ("incorrect, try again");
+            System.out.println (x + " - " + y);
+            user_ans = reader.nextInt(); 
+            if (user_ans == ans){
+              System.out.println ("correct");
+              points = points + 2;
+            }
+            else {
+              System.out.println ("Incorrect. The answer is: " + ans + "!");
+              System.out.println (" ");
+              points = points + 0;
+            }
+          }
+        }
+        numproblems++;
+        
+      }
+        System.out.println("You got " + points + "!");
+        break;
+      
+      case 3 : while (numproblems < 10){
+        x = 1 + rand.nextInt(101);
+        y = 1 + rand.nextInt(101);
+        System.out.println ("Question "+ numproblems + ".) " + x + " * " + y);
+        user_ans = reader.nextInt(); 
+        ans = x * y;
+        if (user_ans == ans){
+          System.out.println("correct");
+          points = points + 10;
+        }
+        else {
+          System.out.println ("incorrect, try again");
+          System.out.println (x + " * " + y);
+          user_ans = reader.nextInt(); 
+          if (user_ans == ans){
+            System.out.println("correct");
+            points = points + 5;
+          }
+          else {
+            System.out.println ("incorrect, try again");
+            System.out.println (x + " * " + y);
+            user_ans = reader.nextInt(); 
+            if (user_ans == ans){
+              System.out.println ("correct");
+              points = points + 2;
+            }
+            else {
+              System.out.println ("Incorrect. The answer is: " + ans + "!");
+              System.out.println (" ");
+              points = points + 0;
+            }
+          }
+        }
+        System.out.println("You got " + points + "!");
+        numproblems++;
+        
+      }
+        break;
+      
+      case 4 : while (numproblems < 10){
+        double x2;
+        double y2;
+        double ans2;
+        double user_ans2;
+        x2 = 1 + rand.nextInt(101);
+        y2 = 1 + rand.nextInt(101);
+        System.out.println ("Question "+ numproblems + ".) " + x2 + " / " + y2);
+        user_ans2 = reader.nextInt(); 
+        ans2 = Math.round(x2 / y2); //rounds to whole num
+        if (user_ans2 == ans2){
+          System.out.println("correct");
+          points = points + 10;
+        }
+        else {
+          System.out.println ("incorrect, try again");
+          System.out.println (x2 + " / " + y2);
+          user_ans = reader.nextInt(); 
+          if (user_ans2 == ans2){
+            System.out.println("correct");
+            points = points + 5;
+          }
+          else {
+            System.out.println ("incorrect, try again");
+            System.out.println (x2 + " / " + y2);
+            user_ans = reader.nextInt(); 
+            if (user_ans2 == ans2){
+              System.out.println ("correct");
+              points = points + 2;
+            }
+            else {
+              System.out.println ("Incorrect. The answer is: " + decform.format (ans2)+ "!");
+              System.out.println (" ");
+              points = points + 0;
+            }
+          }
+        }
+        numproblems++;
+        
+      }
+        System.out.println("You got " + points + "!");
+        break;
+
+      default: System.out.println ("Invalid input");
+        break;
+        
+      }
+    
+
+    System.out.println (" ");
+    System.out.println ("Do you want to replay this program?");
+    System.out.println ("0 = no , 1 = yes"); 
+    answer = reader.nextInt();
+      if (answer == 0) 
+        check--;
+      
+    } while (check == 1);  
+
+
+
+
+
+
+
+
+
+
+    
+  }
+}
